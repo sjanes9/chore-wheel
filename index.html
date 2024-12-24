@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ADHD- & Autism-Friendly Chore Wheel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Family Chore Wheel</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#wheel">Wheel</a></li>
+        <li><a href="#chores">Chores</a></li>
+        <li><a href="#profiles">Profiles</a></li>
+        <li><a href="#rewards">Rewards</a></li>
+        <li><a href="#settings">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME / DASHBOARD SECTION -->
+    <section id="home" class="page-section">
+      <h2>Dashboard</h2>
+      <div class="family-container">
+        <div class="family-member">
+          <img src="assets/icons/avatar1.png" alt="Avatar 1" />
+          <p>Alex</p>
+          <p>Current Chore: <strong>Taking out Trash</strong></p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 50%;"></div>
+          </div>
+        </div>
+      </div>
+      <button id="goToWheel">Spin the Chore Wheel</button>
+    </section>
+
+    <!-- WHEEL SECTION -->
+    <section id="wheel" class="page-section hidden">
+      <h2>Spin the Wheel</h2>
+      <div class="wheel-container">
+        <canvas id="choreWheel" width="400" height="400"></canvas>
+        <button id="spinButton">SPIN</button>
+      </div>
+      <div class="result">
+        <h3>Selected Chore: <span id="selectedChore">-</span></h3>
+      </div>
+    </section>
+
+    <!-- CHORES SECTION -->
+    <section id="chores" class="page-section hidden">
+      <h2>Manage Chores</h2>
+      <form id="choreForm">
+        <label for="choreName">Chore Name:</label>
+        <input type="text" id="choreName" required />
+
+        <label for="choreIcon">Icon (optional):</label>
+        <select id="choreIcon">
+          <option value="broom">Broom</option>
+          <option value="trash">Trash</option>
+          <option value="dishes">Dishes</option>
+        </select>
+
+        <label for="choreFrequency">Frequency (weight):</label>
+        <input type="number" id="choreFrequency" value="1" min="1" />
+
+        <button type="submit">Add/Update Chore</button>
+      </form>
+      <ul id="choreList"></ul>
+    </section>
+
+    <!-- PROFILES SECTION -->
+    <section id="profiles" class="page-section hidden">
+      <h2>Family Profiles</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <!-- REWARDS SECTION -->
+    <section id="rewards" class="page-section hidden">
+      <h2>Rewards</h2>
+      <p>Coming soon...</p>
+    </section>
+
+    <!-- SETTINGS SECTION -->
+    <section id="settings" class="page-section hidden">
+      <h2>Settings</h2>
+      <label for="enableTTS">Enable Text-to-Speech</label>
+      <input type="checkbox" id="enableTTS" />
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
